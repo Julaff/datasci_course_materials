@@ -20,7 +20,6 @@ def mapper(record):
 def reducer(key, list_of_values):
     # key: order_list
     # value: line_list
-    #join_list = append(list_of_values[0], list_of_values[1])
     order_list = list_of_values[0]
     line_list = list_of_values[1:]
     for i in range(len(line_list)):
