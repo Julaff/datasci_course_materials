@@ -31,11 +31,12 @@ def reducer(key, list_of_values):
 #    print 0
     # key: (i,k)
     # value: Sum_j(A[i,j]*B[j,k])
-    l = []
-    for c in range(len(list_of_values)):
-      l.append(list_of_values[c][0])
-    print l
-#      mr.emit((key,list_of_values))
+    sorted_values = sorted(list_of_values)
+    total = 0
+    for v in range(len(sorted_values) - 1):
+      if sorted_values[v][0] == sorted_values[v+1][0]:
+        total = total + sorted_values[v][1]*sorted_values[v+1][1]
+    mr.emit((key[0],key[1],total))
 
 # Do not modify below this line
 # =============================
