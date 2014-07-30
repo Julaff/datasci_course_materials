@@ -13,7 +13,6 @@ mr = MapReduce.MapReduce()
 def mapper(record):
     # key: (i,j) then (j,k)
     # value: A[i,j] then B[j,k]
-#    print record[3]
     tablename = record[0]
     if tablename == 'a':
       for k in range(5):
@@ -28,7 +27,6 @@ def mapper(record):
         mr.emit_intermediate(key, value)
 
 def reducer(key, list_of_values):
-#    print 0
     # key: (i,k)
     # value: Sum_j(A[i,j]*B[j,k])
     sorted_values = sorted(list_of_values)
