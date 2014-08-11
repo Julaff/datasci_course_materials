@@ -1,5 +1,7 @@
 Comment exécuter les fichiers .pig
 ==================================
+Instructions valables sous Unix uniquement
+------------------------------------------
 
 * Se connecter à AWS
 
@@ -27,7 +29,7 @@ Comment exécuter les fichiers .pig
 
 * Avant de lancer l'algorithme, ouvrir un autre terminal
 * exécuter : ssh -L 9100:localhost:9100 -L 9101:localhost:9101  -i oregonkey.pem hadoop@ec2-54-191-22-191.us-west-2.compute.amazonaws.com
-* cela permettra d'afficher [link](http://localhost:9101/jobtracker.jsp) dans un explorateur afin de suivre en temps réel l'avancement, bien plus précis que le terminal
+* cela permettra d'afficher [http://localhost:9100/jobtracker.jsp](http://localhost:9100/jobtracker.jsp) dans un explorateur afin de suivre en temps réel l'avancement, bien plus précis que le terminal
 
 * une fois l'exécution terminée, pour récupérer les fichiers :
 * hadoop fs -copyToLocal /user/hadoop/example-results example-results où example-result est le nom précisé dans l'instruction STORE
